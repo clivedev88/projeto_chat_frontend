@@ -16,3 +16,32 @@ body{
     font-family: 'Roboto', sans-serif;
   }
 
+.dropdown {
+    display: inline-block;
+    
+  }
+
+  .dropdown a {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropdown p {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color6);
+    margin-top: 10px;
+    padding: 10px 20px;
+
+  }
+
+  .dropdown:hover .dropdown-content{
+    display: block;
+  }

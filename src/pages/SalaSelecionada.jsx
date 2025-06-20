@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Message } from '../components/Message';
 import { UsersOnline } from '../components/UsersOnline';
 import { useParams, useNavigate } from 'react-router-dom';
+import { ChatSideBar } from '../components/ChatSideBar';
 
 export default function SalaFront() {
   const { id: groupid } = useParams();
@@ -86,21 +87,27 @@ export default function SalaFront() {
   return (
     <div className="chat-container">
       <div className="sidebar">
-        <div className="sidebar-header">
+        <ChatSideBar />
+        {/* <div className="sidebar-header">
           <h2>Membros Online</h2>
         </div>
         <div className="room-list">
           <UsersOnline nome="Thiago Gagliari" img="https://via.placeholder.com/40" />
           <UsersOnline nome="Julia Catapan" img="https://via.placeholder.com/40" />
           <UsersOnline nome="Jully Costa" img="https://via.placeholder.com/40" />
-        </div>
+        </div> */}
       </div>
 
       <div className="main-chat">
         <div className="chat-header">
           <h2>Chat {salaNome}</h2>
           <a href="#" onClick={(e) => { e.preventDefault(); setShowSearch(!showSearch); }}><Search /></a>
-          <a onClick={sair}><LogOut /></a>
+          <div className='dropdown'>
+                <a onClick={sair}><LogOut/></a>
+                <div className='dropdown-content'>
+                  <p>Voltar</p>
+                </div>
+              </div>
         </div>
 
         {showSearch && (
